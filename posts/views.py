@@ -33,5 +33,5 @@ class PostViewSet(ModelViewSet):
     serializer_class = PostSerializer
 
 class UserViewSet(ModelViewSet):
-    queryset = get_user_model.objects.all()
+    queryset = get_user_model().objects.all()
     serializer_class = UserSerializer    
