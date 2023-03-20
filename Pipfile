@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 django-allauth = "*"
+pyyaml = "*"
+uritemplate = "*"
 
 [dev-packages]
 
