@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
 
     #local apps
     "posts.apps.PostsConfig" , 
@@ -52,13 +53,16 @@ INSTALLED_APPS = [
 
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+SITE_ID = 1
 
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES" :["rest_framework.permissions.AllowAny" , ] ,
-    "DEFAULT_AUTHENTICATION_CLASSES" :["rest_framework.authentication.SessionAuthentication" , "rest_framework.authentication.TokenAuthentication" , ] ,
+    "DEFAULT_PERMISSION_CLASSES" :
+        ["rest_framework.permissions.AllowAny" , ] ,
 
-
+    "DEFAULT_AUTHENTICATION_CLASSES" :
+        ["rest_framework.authentication.SessionAuthentication" , 
+        "rest_framework.authentication.TokenAuthentication" , ]     
 }
 
 MIDDLEWARE = [
